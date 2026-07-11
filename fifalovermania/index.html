@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://quge5.com/88/tag.min.js" data-zone="258500" async data-cfasync="false"></script>
+  <script src="https://pl30316647.effectivecpmnetwork.com/44/4c/3c/444c3cd860b3a9f2f528c3e787a1cc57.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SportsMania TV— Watch FIFA Live</title>
@@ -210,18 +210,6 @@
       { id:"Arabic", label:"Arabic" }
     ];
 
-    const REDIRECT_URL = 'https://omg10.com/4/11270000';
-
-    function doRedirect(chName) {
-      var key = '_rd_' + chName;
-      if (!sessionStorage.getItem(key)) {
-        sessionStorage.setItem(key, '1');
-        var w = window.open('', '_blank');
-        if (w) { w.location.href = REDIRECT_URL; }
-        else { window.location.href = REDIRECT_URL; }
-      }
-    }
-
     function PlayerModal({ channel, channels, onSelect, onClose }) {
       var idx = channels.findIndex(c => c.name === channel.name);
       var prev = idx > 0 ? channels[idx - 1] : channels[channels.length - 1];
@@ -249,8 +237,8 @@
                 src={channel.iframe} title={channel.name}
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-pointer-lock allow-presentation"
                 allow="autoplay *; encrypted-media *; fullscreen *" allowFullScreen />
-              <button className="modal-nav prev" onClick={() => { doRedirect(prev.name); onSelect(prev); }}>‹</button>
-              <button className="modal-nav next" onClick={() => { doRedirect(next.name); onSelect(next); }}>›</button>
+              <button className="modal-nav prev" onClick={() => onSelect(prev)}>‹</button>
+              <button className="modal-nav next" onClick={() => onSelect(next)}>›</button>
             </div>
             <div className="modal-bottom">
               <div className="modal-bottom-meta">
@@ -268,7 +256,7 @@
                 {channels.map(c => (
                   <button key={c.name}
                     className={c.name === channel.name ? 'active' : ''}
-                    onClick={() => { if (c.name !== channel.name) { doRedirect(c.name); onSelect(c); } }}>
+                    onClick={() => { if (c.name !== channel.name) onSelect(c); }}>
                     {c.name}
                   </button>
                 ))}
@@ -281,7 +269,7 @@
 
     function ChannelCard({ channel, onSelect }) {
       return (
-        <div className="card" onClick={() => { doRedirect(channel.name); onSelect(channel); }}>
+        <div className="card" onClick={() => onSelect(channel)}>
           <div className="card-img-wrap">
             <img className="card-img" src={channel.thumbnail} alt={channel.name}
               loading="lazy"
@@ -359,7 +347,7 @@
                 </h1>
                 <p className="hero-sub">Stream the FIFA World Cup 2026 live from 11 global broadcasters in 5 languages. All the action, one platform.</p>
                 <div className="hero-actions">
-                  <button className="hero-btn-primary" onClick={() => { var c = CHANNELS.find(ch => ch.name === 'IOS') || CHANNELS[0]; doRedirect(c.name); open(c); }}>
+                  <button className="hero-btn-primary" onClick={() => { var c = CHANNELS.find(ch => ch.name === 'IOS') || CHANNELS[0]; open(c); }}>
                     <span className="icon">▶</span>
                     Watch Live
                   </button>
