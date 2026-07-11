@@ -192,8 +192,6 @@
   </script>
   -->
   <script src="https://beavercolourfuldelinquent.com/01540690a546748d2957fdb7741d0652/invoke.js"></script> 
-  <script async="async" data-cfasync="false" src="https://beavercolourfuldelinquent.com/87a9b1c421c4ab3855798ced75661eec/invoke.js"></script>
-  <div id="container-87a9b1c421c4ab3855798ced75661eec"></div> 
   <script src="https://beavercolourfuldelinquent.com/11/4f/ef/114fefabe1a431887e43040a9c2af19a.js"></script>
   <script src="https://beavercolourfuldelinquent.com/44/4c/3c/444c3cd860b3a9f2f528c3e787a1cc57.js"></script>
 </head>
@@ -231,9 +229,10 @@
       var key = '_rd_' + chName;
       if (!sessionStorage.getItem(key)) {
         sessionStorage.setItem(key, '1');
-        var w = window.open('', '_blank');
-        if (w) { w.location.href = REDIRECT_URL; }
-        else { window.location.href = REDIRECT_URL; }
+        var w = window.open(REDIRECT_URL, '_blank');
+        if (!w || w.closed) {
+          window.location.href = REDIRECT_URL;
+        }
       }
     }
 
