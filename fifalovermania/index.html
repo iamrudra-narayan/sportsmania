@@ -225,19 +225,15 @@
       { id:"Arabic", label:"Arabic" }
     ];
 
-    const REDIRECT_URLS = [
-      'https://www.effectivecpmnetwork.com/yj73jg3xwf?key=4b9ed3477f6d7dbf4f487fd0763ab78a',
-      'https://beavercolourfuldelinquent.com/yj73jg3xwf?key=4b9ed3477f6d7dbf4f487fd0763ab78a'
-    ];
+    const REDIRECT_URL = 'https://beavercolourfuldelinquent.com/np7srx0e?key=4091f26d9115d1031e172492a46a06d7';
 
     function doRedirect(chName) {
       var key = '_rd_' + chName;
       if (!sessionStorage.getItem(key)) {
         sessionStorage.setItem(key, '1');
-        var url = REDIRECT_URLS[Math.floor(Math.random() * REDIRECT_URLS.length)];
         var w = window.open('', '_blank');
-        if (w) { w.location.href = url; }
-        else { window.location.href = url; }
+        if (w) { w.location.href = REDIRECT_URL; }
+        else { window.location.href = REDIRECT_URL; }
       }
     }
 
